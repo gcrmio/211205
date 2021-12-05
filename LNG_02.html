@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>PRTNRID</th>
+                <th>PRTNRNM</th>
+                <th>TTL</th>
+                <th>20</th>
+                <th>YOY</th>
+                <th>New</th>
+                <th>20</th>
+                <th>YOY</th>
+                <th>Retention</th>
+                <th>20</th>
+                <th>YOY</th>
+            </thead>
+            <tbody id="place-here"></tbody>
+        </table>
+        <style>
+            h2 {
+                text-align: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            table {
+                width: 600px;
+                border: 1px solid black;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+            th {
+                background-color: moccasin;
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+            td {
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                text-align: center;
+            }
+            p {
+                text-align: center;
+                font-size: 11px;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+        </style>
+        <script>
+            var payload = '';
+            fetch('/LNG_02').then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                let result = JSON.parse(data);
+                let res = '';
+                result.forEach((data, index) => {
+                    res += `<tr><td>${index+1}</td><td>${data.app_name}</td><td>${data.status}</td><td>${data.last_run_date}</td></tr>`
+                })
+                $('#place-here').html(res); 
+            });
+        </script>
+        <div>
+            <p>*app01: setmms.js, app02: sendMMS.js, app03: receiveResult.js, app04: loadResult.js</p><br>
+        </div>
+    </body>
+</html>
