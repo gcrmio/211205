@@ -18,6 +18,7 @@
   "homepage": "https://github.com/gcrmio/211205#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "path": "^0.12.7",
     "pg": "^8.7.1"
   },
   "description": ""
