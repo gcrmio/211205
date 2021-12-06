@@ -60,13 +60,22 @@
                 let result = JSON.parse(data);
                 let res = '';
                 result.forEach((data, index) => {
-                    res += `<tr><td>${index+1}</td><td>${data.app_name}</td><td>${data.status}</td><td>${data.last_run_date}</td></tr>`
+                    res += `<tr>
+                                <td>${data.partner_id}</td>
+                                <td>${data.partner_name}</td>
+                                <td>${data.TTL}</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>New</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>Retention</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                            </tr>`
                 })
                 $('#place-here').html(res); 
             });
         </script>
-        <div>
-            <p>*app01: setmms.js, app02: sendMMS.js, app03: receiveResult.js, app04: loadResult.js</p><br>
-        </div>
     </body>
 </html>
