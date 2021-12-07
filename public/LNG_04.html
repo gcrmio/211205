@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan = "34">Department Store</td>
+                </tr>
+                <tr>
+                    <td rowspan = "2"></td>
+                    <td colspan = "11">ACTIVE</td>
+                    <td colspan = "11">NEW</td>
+                    <td colspan = "11">OLD</td>
+                </tr>
+                <tr>
+                    <td>No. of Customer</td>
+                    <td>YOY</td>
+                    <td>No. of Transaction</td>
+                    <td>YOY</td>
+                    <td>AMT</td>
+                    <td>YOY</td>
+                    <td>AUS</td>
+                    <td>YOY</td>
+                    <td>QTY</td>
+                    <td>IPT</td>
+                    <td>20 IPT</td>
+                </tr>
+            </thead>
+            <tbody id="place-here"></tbody>
+                <tr><td>Jan</td></tr>
+                <tr><td>Feb</td></tr>
+                <tr><td>Mar</td></tr>
+                <tr><td>Apr</td></tr>
+                <tr><td>May</td></tr>
+                <tr><td>Jun</td></tr>
+                <tr><td>Jul</td></tr>
+                <tr><td>Aug</td></tr>
+                <tr><td>Sep</td></tr>
+                <tr><td>Oct</td></tr>
+                <tr><td>Nov</td></tr>
+                <tr><td>Dec</td></tr>
+                <tr><td>YTD</td></tr>            
+        </table>
+        <style>
+            h2 {
+                text-align: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            table {
+                width: 600px;
+                border: 1px solid black;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+            th {
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+            td {
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                text-align: center;
+            }
+            p {
+                text-align: center;
+                font-size: 11px;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+        </style>
+        <script>
+            var payload = '';
+            fetch('/LNG_04').then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                let result = JSON.parse(data);
+                let res = '';
+                result.forEach((data, index) => {
+                    res += `<tr>
+                                <td>${data.partner_id}</td>
+                                <td>${data.partner_name}</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>人數</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                                <td>AUS</td>
+                                <td>20</td>
+                                <td>YOY</td>
+                            </tr>`
+                })
+                $('#place-here').html(res); 
+            });
+        </script>
+    </body>
+</html>
