@@ -54,14 +54,8 @@
                 </tr>
             </thead>
             <tbody id="place-here"></tbody>
-            <tr>
-                <td colspan = "2">總計</td>
-                <tbody id="place-here2"></tbody>
-            </tr>
-            <tr>
-                <td colspan = "2">LFL</td>
-                <tbody id="place-here3"></tbody>
-            </tr>
+            <tbody id="place-here2"></tbody>
+            <tbody id="place-here3"></tbody>
         </table>
         <style>
             h2 {
@@ -145,7 +139,9 @@
                                 <td>val_20</td>
                                 <td>val_YOY</td>
                             </tr>`
-                    res2 +=`<td>1</td>
+                    res2 +=`<tr>
+                            <td colspan = "2">總計</td>
+                            <td>1</td>
                             <td>2</td>
                             <td>3</td>
                             <td>4</td>
@@ -181,9 +177,12 @@
                             <td>34</td>
                             <td>35</td>
                             <td>36</td>
-                            <td>37</td>`
-                            
-                    res3 +=`<td>1</td>
+                            <td>37</td>
+                            </tr>`
+
+                    res3 +=`<tr>
+                            <td colspan = "2">LFL</td>
+                            <td>1</td>
                             <td>2</td>
                             <td>3</td>
                             <td>4</td>
@@ -219,7 +218,8 @@
                             <td>34</td>
                             <td>35</td>
                             <td>36</td>
-                            <td>37</td>`
+                            <td>37</td>
+                            </tr>`
                 })
                 $('#place-here').html(res); 
                 $('#place-here2').html(res2);
