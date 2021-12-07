@@ -102,6 +102,8 @@
             }).then(function(data) {
                 let result = JSON.parse(data);
                 let res = '';
+                let res2 = '';
+                let res3 = '';
                 result.forEach((data, index) => {
                     res += `<tr>
                                 <td>${data.partner_id}</td>
