@@ -10,4 +10,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => res.send('Hello world!'));
 app.listen(port, () => console.log('Example app listening on port ${port}'));
 
-app.get('/LNG_02', pgdata.viewStatus);
+app.get('/LNG_01', pgdata.viewStatus1);
+app.get('/LNG_02', pgdata.viewStatus2);
