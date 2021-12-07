@@ -75,57 +75,6 @@
                 font-family: "Lucida Console", Monaco, monospace;
             }
         </style>
-        <script>
-            var payload = '';
-            fetch('/LNG_04').then(function(response) {
-                return response.json();
-            }).then(function(data) {
-                let result = JSON.parse(data);
-                let res = '';
-                result.forEach((data, index) => {
-                    res += `<tr>
-                                <td>${data.partner_id}</td>
-                                <td>${data.partner_name}</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>人數</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                                <td>AUS</td>
-                                <td>20</td>
-                                <td>YOY</td>
-                            </tr>`
-                })
-                $('#place-here').html(res); 
-            });
-        </script>
+        
     </body>
 </html>
