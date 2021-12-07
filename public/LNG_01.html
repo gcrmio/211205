@@ -6,7 +6,7 @@
         <table>
             <thead>
                 <tr>
-                    <td rowspan = "2" colspan = "2">最常消費櫃</td>
+                    <td rowspan = "2" colspan = "3">最常消費櫃</td>
                     <td colspan="6">New + Retention</td>
                     <td colspan="6">New</td>
                     <td colspan="6">Retention</td>
@@ -100,6 +100,7 @@
                 let res3 = '';
                 result.forEach((data, index) => {
                     res += `<tr>
+                                <td>GROUP</td>
                                 <td>${data.partner_id}</td>
                                 <td>${data.partner_name}</td>
                                 <td>val_人數</td>
