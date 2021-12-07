@@ -12,3 +12,5 @@ app.listen(port, () => console.log('Example app listening on port ${port}'));
 
 app.get('/LNG_01', pgdata.viewStatus1);
 app.get('/LNG_02', pgdata.viewStatus2);
+app.get('/LNG_03', pgdata.viewStatus3);
+app.get('/LNG_04', pgdata.viewStatus4);

@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td rowspan = "2">product</td>
+                    <td rowspan = "2">customer type</td>
+                    <td colspan="4">Jan</td>
+                    <td colspan="4">Feb</td>
+                    <td colspan="4">Mar</td>
+                    <td colspan="4">Apr</td>
+                    <td colspan="4">May</td>
+                    <td colspan="4">Jun</td>
+                    <td colspan="4">Jul</td>
+                    <td colspan="4">Aug</td>
+                    <td colspan="4">Sep</td>
+                    <td colspan="4">Oct</td>
+                    <td colspan="4">Nov</td>
+                    <td colspan="4">Dec</td>
+                    <td colspan="4">YTD</td>
+                    <td colspan="2">YTD Link-Sell</td>
+                </tr>
+                <tr>              
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                    <td>no. of cust</td>
+                    <td>YOY</td>
+                    <td>sales</td>
+                    <td>YOY</td>
+                </tr>
+            </thead>
+            <tbody id="place-here"></tbody>
+        </table>
+        <style>
+            h2 {
+                text-align: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            table {
+                width: 600px;
+                border: 1px solid black;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+            th {
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+            td {
+                border: 1px solid black;
+                height: 20px;
+                font-size: 16px;
+                text-align: center;
+            }
+            p {
+                text-align: center;
+                font-size: 11px;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+        </style>
+        <script>
+            var payload = '';
+            fetch('/LNG_01').then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                let result = JSON.parse(data);
+                let res = '';
+                result.forEach((data, index) => {
+                    res += `<tr>
+                                <td>${data.partner_id}</td>
+                                <td>${data.partner_name}</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                                <td>no. of cust</td>
+                                <td>YOY</td>
+                                <td>sales</td>
+                                <td>YOY</td>
+                            </tr>`
+                })
+                $('#place-here').html(res); 
+            });
+        </script>
+    </body>
+</html>
